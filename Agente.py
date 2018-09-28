@@ -12,10 +12,10 @@ class Agente(Conexion):
         con.commit()
         self.cerrar(con)
 
-    def eliminar(self,hostname,usuario):
+    def eliminar(self,comunidad,usuario):
         con = self.conectar()
         cursor = con.cursor()
-        cursor.execute("delete from Agente where hostname = '" +hostname +"';")
+        cursor.execute("delete from Agente where comunidadSNMP = '" +comunidad +"';")
         con.commit()
         self.cerrar(con)
 
