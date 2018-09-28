@@ -45,10 +45,9 @@ class Principal():
 
     def eliminar(self):
         agente = Agente()
-        agente.eliminar(self.Hostname.get(), self.usuario)
-        self.Hostname.set("")
+        agente.eliminar(self.Comunidad.get(), self.usuario)
+        self.Comunidad.set("")
         messagebox.showinfo("Eliminado exitoso", "Agente eliminado correctamente")
-        self.mostrarDispositivos()
 
     def mostrarDispositivos(self):
         agente = Agente()
@@ -107,8 +106,8 @@ class Principal():
     def pestEliminarAgente(self):
         pes2 = ttk.Frame(self.notebook)
         self.notebook.add(pes2, text="Eliminar agente")
-        Label(pes2, text="Hostname:").grid(row=0, column=0)
-        Entry(pes2, textvariable=self.Hostname).grid(row=0, column=1)
+        Label(pes2, text="Comunidad:").grid(row=0, column=0)
+        Entry(pes2, textvariable=self.Comunidad).grid(row=0, column=1)
         Button(pes2, text="Borrar", command=self.eliminar).grid(row=1, column=0)
 
     def pestEstadoDispositivo(self):
